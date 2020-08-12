@@ -47,6 +47,7 @@ class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
+      key: Key('goToTaskPageButton'),
       onPressed: () {
         Navigator.of(context).pushNamed('/todo');
       },

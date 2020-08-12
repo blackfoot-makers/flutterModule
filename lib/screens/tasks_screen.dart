@@ -61,6 +61,7 @@ class TasksScreen extends StatelessWidget {
                   ),
                   Text(
                     '${Provider.of<TasksNotifier>(context).tasksCount} Tasks',
+                    key: Key('taskCounter'),
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20,
