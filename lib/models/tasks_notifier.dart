@@ -4,7 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_app/models/task.dart';
 
 class TasksNotifier extends ChangeNotifier {
-  final List<Task> _tasks = <Task>[];
+  List<Task> _tasks = <Task>[];
+
+  TasksNotifier({List<Task> tasks}) {
+    this._tasks = tasks ?? [];
+  }
 
   UnmodifiableListView<Task> get tasks => UnmodifiableListView<Task>(_tasks);
 
