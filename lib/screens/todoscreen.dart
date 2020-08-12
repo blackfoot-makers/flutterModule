@@ -5,9 +5,9 @@ class TodoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Todo page'),
+        title: Text('Todo page'),
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: Center(
           child: Text('My new page'),
         ),

@@ -14,7 +14,7 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Avatar(),
-            const Text(
+            Text(
               'Nicolas Thing-leoh',
               style: TextStyle(
                 color: Colors.white,
@@ -35,12 +35,12 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             Card(
-              margin: const EdgeInsets.symmetric(
+              margin: EdgeInsets.symmetric(
                 horizontal: 25,
                 vertical: 10,
               ),
               child: ListTile(
-                leading: const Icon(
+                leading: Icon(
                   Icons.phone,
                   color: Colors.teal,
                 ),
@@ -54,12 +54,12 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             Card(
-              margin: const EdgeInsets.symmetric(
+              margin: EdgeInsets.symmetric(
                 horizontal: 25,
                 vertical: 10,
               ),
               child: ListTile(
-                leading: const Icon(
+                leading: Icon(
                   Icons.email,
                   color: Colors.teal,
                 ),
@@ -74,10 +74,10 @@ class SplashScreen extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.push<TodoScreen>(
+                Navigator.push(
                   context,
-                  MaterialPageRoute<TodoScreen>(
-                    builder: (BuildContext context) => TodoScreen(),
+                  MaterialPageRoute(
+                    builder: (context) => TodoScreen(),
                   ),
                 );
               },
