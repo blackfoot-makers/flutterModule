@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants.dart';
-import 'package:flutter_app/location.dart';
-import 'avatar.dart';
+import 'package:flutter_app/widgets/location.dart';
+import 'package:flutter_app/screens/todoscreen.dart';
+import '../widgets/avatar.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -71,7 +72,17 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Location()
+            FlatButton(
+              onPressed: () {
+                Navigator.push<TodoScreen>(
+                  context,
+                  MaterialPageRoute<TodoScreen>(
+                    builder: (BuildContext context) => TodoScreen(),
+                  ),
+                );
+              },
+              child: Location(),
+            )
           ],
         ),
       ),
