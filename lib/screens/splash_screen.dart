@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants.dart';
 import 'package:flutter_app/widgets/location.dart';
-import 'package:flutter_app/screens/todoscreen.dart';
 import '../widgets/avatar.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Avatar(),
-            Text(
+            const Text(
               'Nicolas Thing-leoh',
               style: TextStyle(
                 color: Colors.white,
@@ -35,12 +34,12 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             Card(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 25,
                 vertical: 10,
               ),
               child: ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.phone,
                   color: Colors.teal,
                 ),
@@ -54,12 +53,12 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             Card(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 25,
                 vertical: 10,
               ),
               child: ListTile(
-                leading: Icon(
+                leading: const Icon(
                   Icons.email,
                   color: Colors.teal,
                 ),
@@ -74,12 +73,7 @@ class SplashScreen extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TodoScreen(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/todo');
               },
               child: Location(),
             )

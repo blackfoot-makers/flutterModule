@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/splashscreen.dart';
+import 'package:flutter_app/screens/splash_screen.dart';
+import 'package:flutter_app/screens/todo_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: SplashScreen(),
+      routes: {
+        '/todo': (BuildContext context) => TodoScreen(),
+      },
     );
   }
 }
