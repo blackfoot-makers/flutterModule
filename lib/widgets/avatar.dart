@@ -12,17 +12,17 @@ class _AvatarState extends State<Avatar> {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 50,
-      backgroundImage: AssetImage('assets/${kAssets[_clickState ? 1 : 0]}'),
-      backgroundColor: Colors.transparent,
-      child: FlatButton(
-        onPressed: () {
-          setState(() {
-            _clickState = !_clickState;
-          });
-        },
+    return FlatButton(
+      child: CircleAvatar(
+        radius: 50,
+        backgroundImage: AssetImage('assets/${kAssets[_clickState ? 1 : 0]}'),
+        backgroundColor: Colors.transparent,
       ),
+      onPressed: () {
+        setState(() {
+          _clickState = !_clickState;
+        });
+      },
     );
   }
 }
