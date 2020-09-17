@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'avatar.dart';
-
 final kTextStyle = TextStyle(
   fontFamily: 'Source Sans Pro',
   color: Colors.teal.shade100,
@@ -19,7 +17,13 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Avatar(),
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage(
+                'assets/koala.jpg',
+              ),
+              backgroundColor: Colors.transparent,
+            ),
             Text(
               'Nicolas Thing-leoh',
               style: TextStyle(
