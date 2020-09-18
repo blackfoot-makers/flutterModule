@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 class AddTaskScreen extends StatelessWidget {
   void onPress(BuildContext context, String text) {
-    Provider.of<TasksNotifier>(context, listen: false).addTask(text);
+    context.read<TasksNotifier>().addTask(text);
     Navigator.pop(context);
   }
 

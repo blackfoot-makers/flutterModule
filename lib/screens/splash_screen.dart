@@ -30,7 +30,7 @@ class SplashScreen extends StatelessWidget {
               style: kTextStyle,
             ),
             Text(
-              '${Provider.of<TasksNotifier>(context).tasksCount} Tasks',
+              '${context.watch<TasksNotifier>().tasksCount} Tasks',
               style: kTextStyle,
             ),
             SizedBox(

@@ -9,27 +9,28 @@ class TaskList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<TasksNotifier>(
       builder:
-          (BuildContext context, TasksNotifier tasksNotifier, Widget child) =>
-              ListView.builder(
-        itemBuilder: (BuildContext context, int index) {
-          final Task task = tasksNotifier.tasks[index];
-          if (task == null) {
-            return null;
-          }
+          (BuildContext context, TasksNotifier tasksNotifier, Widget child) {
+        return ListView.builder(
+          itemBuilder: (BuildContext context, int index) {
+            final Task task = tasksNotifier.tasks[index];
+            if (task == null) {
+              return null;
+            }
 
-          return TaskTile(
-            text: task.text,
-            checkboxState: task.isDone,
-            onPress: (bool changed) {
-              tasksNotifier.toggleTask(task);
-            },
-            onLongPress: () {
-              tasksNotifier.deleteTask(task);
-            },
-          );
-        },
-        itemCount: tasksNotifier.tasksCount,
-      ),
+            return TaskTile(
+              text: task.text,
+              checkboxState: task.isDone,
+              onPress: (bool changed) {
+                tasksNotifier.toggleTask(task);
+              },
+              onLongPress: () {
+                tasksNotifier.deleteTask(task);
+              },
+            );
+          },
+          itemCount: tasksNotifier.tasksCount,
+        );
+      },
     );
   }
 }

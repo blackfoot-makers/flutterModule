@@ -60,7 +60,7 @@ class TasksScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '${Provider.of<TasksNotifier>(context).tasksCount} Tasks',
+                    '${context.watch<TasksNotifier>().tasksCount} Tasks',
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 20,
