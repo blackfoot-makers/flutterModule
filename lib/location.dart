@@ -22,10 +22,10 @@ class _LocationState extends State<Location> {
   }
 
   Future<dynamic> getData(Position position) async {
-    Response response = await get(
+    final Response response = await get(
         '$kApiUrl?lat=${position.latitude}&lon=${position.longitude}');
     if (response.statusCode == 200) {
-      String data = response.body;
+      final String data = response.body;
       return jsonDecode(data);
     } else {
       print(response.statusCode);
@@ -33,13 +33,13 @@ class _LocationState extends State<Location> {
     }
   }
 
-  void getLocation() async {
-    Position position = await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.lowest);
-    dynamic data = await getData(position);
+  Future<void> getLocation() async {
+    final Position position =
+        await getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    final dynamic data = await getData(position);
     if (data != null) {
       setState(() {
-        _position = data['features'][0]['properties']['label'];
+        _position = data['features'][0]['properties']['label'] as String;
       });
     }
   }
@@ -47,7 +47,7 @@ class _LocationState extends State<Location> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Text(
         _position,
         style: kTextStyle,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final kTextStyle = TextStyle(
+final TextStyle kTextStyle = TextStyle(
   fontFamily: 'Source Sans Pro',
   color: Colors.teal.shade100,
   fontSize: 20,

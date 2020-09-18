@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const List<String> kAssets = ['koala.jpg', 'koala2.png'];
+const List<String> kAssets = <String>['koala.jpg', 'koala2.png'];
 
 class Avatar extends StatefulWidget {
   @override
