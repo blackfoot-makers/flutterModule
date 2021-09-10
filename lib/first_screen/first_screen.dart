@@ -8,6 +8,8 @@ import 'package:flutter_app/second_screen/second_screen.dart';
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
+  static String id = '/';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +50,9 @@ class FirstScreen extends StatelessWidget {
             InkWell(
               child: const Location(),
               onTap: () {
-                Navigator.push(
+                Navigator.pushNamed(
                   context,
-                  MaterialPageRoute(builder: (context) => const SecondScreen()),
+                  SecondScreen.id,
                 );
               },
             ),
