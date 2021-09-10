@@ -3,6 +3,7 @@ import 'package:flutter_app/constant.dart';
 import 'package:flutter_app/first_screen/avatar.dart';
 import 'package:flutter_app/first_screen/location.dart';
 import 'package:flutter_app/first_screen/my_card.dart';
+import 'package:flutter_app/second_screen/second_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -44,7 +45,15 @@ class FirstScreen extends StatelessWidget {
               icon: Icons.email,
               title: 'nicolas@blackfoot.io',
             ),
-            const Location(),
+            InkWell(
+              child: const Location(),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SecondScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),
