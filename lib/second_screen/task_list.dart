@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/second_screen/task_model.dart';
+import 'package:provider/provider.dart';
 
 class _TaskTile extends StatelessWidget {
   const _TaskTile({
@@ -41,20 +42,13 @@ class _TaskTile extends StatelessWidget {
 class TaskList extends StatelessWidget {
   const TaskList({
     Key? key,
-    required this.tasks,
-    required this.toggleTask,
-    required this.deleteTask,
   }) : super(key: key);
-
-  final List<TaskModel> tasks;
-  final Function(TaskModel) toggleTask;
-  final Function(TaskModel) deleteTask;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (BuildContext context, int index) {
-        final TaskModel? task = tasks[index];
+      itemBuilder: (BuildContext contextList, int index) {
+        final TaskModel? task = context.watch<TaskNotifier>().tasks[index];
         if (task == null) {
           return Container();
         }
@@ -63,14 +57,14 @@ class TaskList extends StatelessWidget {
           text: task.text,
           checkboxState: task.done,
           onPress: (bool? changed) {
-            toggleTask(task);
+            context.read<TaskNotifier>().toggleTask(task);
           },
           onLongPress: () {
-            deleteTask(task);
+            context.read<TaskNotifier>().deleteTask(task);
           },
         );
       },
-      itemCount: tasks.length,
+      itemCount: context.watch<TaskNotifier>().count,
     );
   }
 }

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/second_screen/task_model.dart';
+import 'package:provider/provider.dart';
 
 class AddTaskScreen extends StatelessWidget {
   const AddTaskScreen({
     Key? key,
-    required this.addTask,
   }) : super(key: key);
 
-  final Function(String) addTask;
-
   void _onPress(BuildContext context, String text) {
-    addTask(text);
+    context.read<TaskNotifier>().addTask(text);
     Navigator.pop(context);
   }
 

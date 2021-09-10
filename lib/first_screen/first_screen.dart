@@ -4,6 +4,8 @@ import 'package:flutter_app/first_screen/avatar.dart';
 import 'package:flutter_app/first_screen/location.dart';
 import 'package:flutter_app/first_screen/my_card.dart';
 import 'package:flutter_app/second_screen/second_screen.dart';
+import 'package:flutter_app/second_screen/task_model.dart';
+import 'package:provider/provider.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -30,6 +32,10 @@ class FirstScreen extends StatelessWidget {
             ),
             Text(
               'MOBILE DEVELOPPER',
+              style: kTextStyle,
+            ),
+            Text(
+              '${context.watch<TaskNotifier>().count} number of Tasks',
               style: kTextStyle,
             ),
             SizedBox(
