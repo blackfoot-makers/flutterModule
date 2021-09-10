@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constant.dart';
 import 'package:flutter_app/first_screen/avatar.dart';
+import 'package:flutter_app/first_screen/location.dart';
 import 'package:flutter_app/first_screen/my_card.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -43,6 +44,7 @@ class FirstScreen extends StatelessWidget {
               icon: Icons.email,
               title: 'nicolas@blackfoot.io',
             ),
+            const Location(),
           ],
         ),
       ),
