@@ -55,6 +55,7 @@ class FirstScreen extends StatelessWidget {
             ),
             InkWell(
               child: const Location(),
+              key: const Key('goToTaskPageButton'),
               onTap: () {
                 Navigator.pushNamed(
                   context,

@@ -6,24 +6,46 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/main.dart';
+import 'package:flutter_app/second_screen/task_list.dart';
+import 'package:flutter_app/second_screen/task_model.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Task list smoke test', (WidgetTester tester) async {
+    // Create test list
+    List<TaskModel> taskList = <TaskModel>[
+      TaskModel('First task'),
+      TaskModel('Second task'),
+      TaskModel('Task done')
+    ];
+    taskList[2].toogle();
+
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: ChangeNotifierProvider(
+            create: (BuildContext context) => TaskNotifier(tasks: taskList),
+            child: const TaskList(),
+          ),
+        ),
+      ),
+    );
 
+    final firstTask = find.text(taskList[0].text, skipOffstage: false);
+    final secondTask = find.text(taskList[1].text);
+    final doneTask = find.text(taskList[2].text);
     // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(firstTask, findsOneWidget);
+    expect(secondTask, findsOneWidget);
+    expect(doneTask, findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Tap the done task
+    await tester.tap(doneTask);
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that our isdone is false.
+    expect(taskList[2].done, false);
   });
 }
