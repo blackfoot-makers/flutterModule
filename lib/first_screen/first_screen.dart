@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constant.dart';
+import 'package:flutter_app/first_screen/avatar.dart';
 import 'package:flutter_app/first_screen/my_card.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -13,13 +14,7 @@ class FirstScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage(
-                'assets/images/koala.jpg',
-              ),
-              backgroundColor: Colors.transparent,
-            ),
+            const Avatar(),
             const Text(
               'Nicolas Thing-leoh',
               style: TextStyle(
