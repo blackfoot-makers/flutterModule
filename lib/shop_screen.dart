@@ -142,6 +142,7 @@ class _ButtonAnimatedState extends State<_ButtonAnimated>
     return Transform.rotate(
       angle: _controller.value * 2 * pi,
       child: TextButton(
+        key: Key(widget.product.name),
         style: TextButton.styleFrom(
           foregroundColor: _colorAnimation.value,
         ),
