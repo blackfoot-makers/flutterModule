@@ -3,13 +3,19 @@ import 'package:provider/provider.dart';
 import 'package:workshops/cart_provider.dart';
 import 'package:workshops/product_model.dart';
 
+final List<Product> _productList = List<Product>.generate(
+  50,
+  (int index) => Product(
+    image: 'https://picsum.photos/id/$index/300/150',
+    name: 'Product $index',
+    price: '${index.toStringAsFixed(2)} €',
+  ),
+);
+
 class ShopScreen extends StatelessWidget {
   const ShopScreen({
-    required this.productList,
     super.key,
   });
-
-  final List<Product> productList;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -19,12 +25,13 @@ class ShopScreen extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
-          itemCount: productList.length,
+          itemCount: _productList.length,
           itemBuilder: (BuildContext context, int index) {
-            final Product product = productList[index];
+            final Product product = _productList[index];
             final bool isInCart =
                 context.watch<CartProvider>().cart.contains(product);
             return Card(
+              key: Key(product.image),
               color: Colors.white,
               child: Column(
                 children: <Widget>[

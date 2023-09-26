@@ -28,28 +28,10 @@ class ScreenLayout extends StatefulWidget {
 
 class _ScreenLayoutState extends State<ScreenLayout> {
   int _selectedIndex = 0;
-  late List<Product> _productList;
-  late List<Widget> _screens;
-
-  @override
-  void initState() {
-    super.initState();
-    _productList = List<Product>.generate(
-      50,
-      (int index) => Product(
-        image: 'https://picsum.photos/id/$index/300/150',
-        name: 'Product $index',
-        price: '${index.toStringAsFixed(2)} \$',
-      ),
-    );
-
-    _screens = <Widget>[
-      ShopScreen(
-        productList: _productList,
-      ),
-      const ProfileScreen(),
-    ];
-  }
+  final List<Widget> _screens = <Widget>[
+    const ShopScreen(),
+    const ProfileScreen(),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
