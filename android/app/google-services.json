@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "24938906833",
+    "project_id": "flutter-workshop-4-epitech",
+    "storage_bucket": "flutter-workshop-4-epitech.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24938906833:android:e425e8ce0a38561434b1f0",
+        "android_client_info": {
+          "package_name": "com.example.workshop_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24938906833-ojt5tlb0ane1vcl7o52l62oefmdofsss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgun4lSc6CoLsZQi61JpB43D9x3wmIT3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24938906833-ojt5tlb0ane1vcl7o52l62oefmdofsss.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "24938906833-73520elfp7uv4f3nunvg7eq46g592947.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.workshop2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24938906833:android:c2495194d28daeb834b1f0",
+        "android_client_info": {
+          "package_name": "com.example.workshops"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24938906833-ojt5tlb0ane1vcl7o52l62oefmdofsss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgun4lSc6CoLsZQi61JpB43D9x3wmIT3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24938906833-ojt5tlb0ane1vcl7o52l62oefmdofsss.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "24938906833-73520elfp7uv4f3nunvg7eq46g592947.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.workshop2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
