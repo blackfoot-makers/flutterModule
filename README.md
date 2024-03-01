@@ -1,4 +1,4 @@
-# workshops
+# workshop_epitech
 
 A new Flutter project.
 

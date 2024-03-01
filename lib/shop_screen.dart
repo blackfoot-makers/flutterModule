@@ -3,10 +3,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workshops/cart_provider.dart';
-import 'package:workshops/cart_screen.dart';
-import 'package:workshops/product_model.dart';
-
+import 'package:workshop_epitech/cart_provider.dart';
+import 'package:workshop_epitech/cart_screen.dart';
+import 'package:workshop_epitech/product_model.dart';
 final List<Product> _productList = List<Product>.generate(
   50,
   (int index) => Product(
@@ -16,7 +15,9 @@ final List<Product> _productList = List<Product>.generate(
   ),
 );
 
+/// [ShopScreen] Screen to display shop with [Product] list and button to add [Product] to cart
 class ShopScreen extends StatelessWidget {
+  /// [ShopScreen] constructor
   const ShopScreen({
     super.key,
   });

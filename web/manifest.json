@@ -1,6 +1,6 @@
 {
-    "name": "workshops",
-    "short_name": "workshops",
+    "name": "workshop_epitech",
+    "short_name": "workshop_epitech",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
