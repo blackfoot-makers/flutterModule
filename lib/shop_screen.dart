@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:workshop_epitech/cart_provider.dart';
 import 'package:workshop_epitech/cart_screen.dart';
 import 'package:workshop_epitech/product_model.dart';
+
 final List<Product> _productList = List<Product>.generate(
   50,
   (int index) => Product(
