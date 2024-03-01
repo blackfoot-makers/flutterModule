@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workshops/cart_provider.dart';
-import 'package:workshops/product_model.dart';
-import 'package:workshops/profile_screen.dart';
-import 'package:workshops/shop_screen.dart';
+import 'package:workshop_epitech/cart_provider.dart';
+import 'package:workshop_epitech/product_model.dart';
+import 'package:workshop_epitech/profile_screen.dart';
+import 'package:workshop_epitech/shop_screen.dart';
 
 void main() => runApp(const MyApp());
 
+/// Main widget for [MyApp.]
 class MyApp extends StatelessWidget {
+  /// constructor
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) => MaterialApp(
         home: ChangeNotifierProvider<CartProvider>(
           create: (_) => CartProvider(),
-          child: const ScreenLayout(),
+          child: const _ScreenLayout(),
         ),
       );
 }
 
-class ScreenLayout extends StatefulWidget {
-  const ScreenLayout({super.key});
+class _ScreenLayout extends StatefulWidget {
+  const _ScreenLayout();
 
   @override
-  State<ScreenLayout> createState() => _ScreenLayoutState();
+  State<_ScreenLayout> createState() => _ScreenLayoutState();
 }
 
-class _ScreenLayoutState extends State<ScreenLayout> {
+class _ScreenLayoutState extends State<_ScreenLayout> {
   int _selectedIndex = 0;
   late List<Product> _productList;
   late List<Widget> _screens;

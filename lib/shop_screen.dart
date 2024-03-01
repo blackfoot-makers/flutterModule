@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:workshops/cart_provider.dart';
-import 'package:workshops/product_model.dart';
+import 'package:workshop_epitech/cart_provider.dart';
+import 'package:workshop_epitech/product_model.dart';
 
+/// [ShopScreen] Screen to display shop with [Product] list and button to add [Product] to cart
 class ShopScreen extends StatelessWidget {
+  /// [ShopScreen] constructor
   const ShopScreen({
     required this.productList,
     super.key,
   });
 
+  /// [List<Product>] productList use to display list of [Product]
   final List<Product> productList;
 
   @override
