@@ -11,6 +11,7 @@ include: package:blackfoot_flutter_lint/blackfoot_flutter.yaml
 
 analyzer:
   exclude:
+    - "**/*.g.dart"
     - "lib/firebase_options.dart"
 
 linter:

@@ -16,10 +16,12 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.6
   firebase_analytics: ^10.8.7
+  firebase_core: ^2.25.5
   firebase_crashlytics: ^3.4.16
   flutter:
     sdk: flutter
 
+  flutter_launcher_icons: ^0.13.1
   provider: ^6.0.5
 
 dev_dependencies:
@@ -31,3 +33,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/shop.png"
+  adaptive_icon_background: "#ffffff" # only available for Android 8.0 devices and above
+  adaptive_icon_foreground: "assets/shop.png" # only available for Android 8.0 devices and above
