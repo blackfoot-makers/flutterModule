@@ -44,6 +44,7 @@ class _ScreenLayoutState extends State<_ScreenLayout> {
   Widget build(BuildContext context) => MaterialApp(
         home: Scaffold(
           appBar: AppBar(
+            key: const Key('cartCount'),
             title: const Text('MyShop'),
             leading: UnconstrainedBox(
               child: CircleAvatar(
