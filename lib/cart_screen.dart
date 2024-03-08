@@ -24,7 +24,13 @@ class CartScreen extends StatelessWidget {
                   child: Image.network(product.image),
                 ),
                 title: Text(product.name),
-                subtitle: Text(product.price),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(product.price),
+                    Text('Points: ${product.points}'),
+                  ],
+                ),
               );
             },
           );

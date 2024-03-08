@@ -14,6 +14,12 @@ class CartProvider extends ChangeNotifier {
   UnmodifiableListView<Product> get cart =>
       UnmodifiableListView<Product>(_cart);
 
+  /// Get total points from all products in the cart
+  int get totalPoints => _cart.fold<int>(
+        0,
+        (int previousValue, Product element) => previousValue + element.points,
+      );
+
   /// Add [Product] to cart and notify the listeners
   void addToCart(Product product) {
     _cart.add(product);

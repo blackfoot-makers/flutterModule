@@ -13,6 +13,7 @@ final List<Product> _productList = List<Product>.generate(
     image: 'https://picsum.photos/id/$index/300/150',
     name: 'Product $index',
     price: '${index.toStringAsFixed(2)} €',
+    points: Random().nextInt(250),
   ),
 );
 
@@ -58,6 +59,10 @@ class ShopScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                  ),
+                  Text(
+                    '${product.points} points',
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                   _ButtonAnimated(
                     isInCart: isInCart,
