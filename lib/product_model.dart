@@ -5,6 +5,7 @@ class Product {
     required this.image,
     required this.name,
     required this.price,
+    required this.points,
   });
 
   /// [String] Image (required): Product image url
@@ -15,4 +16,7 @@ class Product {
 
   /// [String] price (required): Product price to show
   final String price;
+
+  /// [int] points (required): Product points to earn
+  final int points;
 }
